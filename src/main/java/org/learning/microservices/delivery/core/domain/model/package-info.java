@@ -1,1 +1,0 @@
-package org.learning.microservices.delivery.core.domain.model;
