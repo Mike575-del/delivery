@@ -54,10 +54,21 @@ public class Transport {
 
     private void setSpeed(int speed){
         if (speed < MIN_SPEED || speed > MAX_SPEED){
-            throw new IllegalArgumentException("Speed should be in interval from %d to %d"
-                    .formatted(MIN_SPEED, MAX_SPEED));
+            throw new IllegalArgumentException("Speed should be in interval from " + MIN_SPEED
+                    + " to " + MAX_SPEED);
         }
         this.speed = speed;
     }
 
+    public UUID getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
 }
