@@ -12,6 +12,26 @@ public class Courier {
     private Location location;
     private CourierStatus status;
 
+    public UUID getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Transport getTransport() {
+        return transport;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public CourierStatus getStatus() {
+        return status;
+    }
+
     public Courier(UUID id, String name, String transportName, int transportSpeed, Location location){
         this.id = id;
         this.name = name;
@@ -36,4 +56,5 @@ public class Courier {
         int distance = this.location.getDistance(target);
         return (int) Math.ceil((double) distance / transport.getSpeed());
     }
+
 }
