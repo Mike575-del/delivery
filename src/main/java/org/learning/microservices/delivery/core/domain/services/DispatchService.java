@@ -21,9 +21,12 @@ public class DispatchService implements IDispatchService{
 
         int minimumTimeToTarget = freeCouriers.stream().
                 mapToInt(c -> c.calculateTimeToLocation(target)).min().getAsInt();
-        return freeCouriers.stream()
+        Courier idealCandidate = freeCouriers.stream()
                 .filter(courier -> courier.calculateTimeToLocation(target) == minimumTimeToTarget)
                 .findFirst().get();
+        order.assign(idealCandidate.getId());
+        idealCandidate.setBusy();
+        return idealCandidate;
     }
 
     private List<Courier> getFreeCouriers(List<Courier> allCouriers){

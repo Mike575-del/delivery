@@ -6,6 +6,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.learning.microservices.delivery.core.domain.model.SharedKernel.Location;
 import org.learning.microservices.delivery.core.domain.model.courieraggregate.Courier;
+import org.learning.microservices.delivery.core.domain.model.courieraggregate.CourierStatus;
 import org.learning.microservices.delivery.core.domain.model.courieraggregate.Transport;
 import org.learning.microservices.delivery.core.domain.model.orderaggregate.Order;
 import org.learning.microservices.delivery.infrastructure.exceptions.InvalidStatusException;
@@ -51,14 +52,20 @@ class DispatchServiceTest {
 
     @ParameterizedTest
     @MethodSource("provideParameters")
-    void shouldReturnCorrectCourierNameHowCanDeliverOrder(String expected, Location orderLocation){
+    void shouldReturnCorrectCourierNameWhoCanDeliverOrder(String expected, Location orderLocation){
 
         Order testOrder = new Order(UUID.randomUUID(), orderLocation);
 
         List<Courier> couriers = getFixture();
 
-        String actual = testService.dispatch(testOrder, couriers).getName();
+        Courier actualIdealCandidate = testService.dispatch(testOrder, couriers);
+
+        String actual = actualIdealCandidate.getName();
+
         assertEquals(expected, actual);
+        assertEquals(actualIdealCandidate.getId(),testOrder.getCourierId());
+        assertEquals(CourierStatus.Busy, actualIdealCandidate.getStatus());
+
     }
 
 
