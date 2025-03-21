@@ -36,4 +36,33 @@ public class Courier {
         int distance = this.location.getDistance(target);
         return (int) Math.ceil((double) distance / transport.getSpeed());
     }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Transport getTransport() {
+        return transport;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public CourierStatus getStatus() {
+        return status;
+    }
+
+    @Override
+    public boolean equals(Object other){
+        if (other instanceof Courier){
+            UUID otherId = ((Courier) other).getId();
+            return this.id.equals(otherId);
+        }
+        return false;
+    }
 }
