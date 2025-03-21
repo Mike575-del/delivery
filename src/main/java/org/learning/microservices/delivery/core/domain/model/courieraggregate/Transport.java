@@ -6,8 +6,8 @@ import java.util.UUID;
 
 public class Transport {
 
-    private static final int MIN_SPEED = 1;
-    private static final int MAX_SPEED = 3;
+    public static final int MIN_SPEED = 1;
+    public static final int MAX_SPEED = 3;
 
     private final UUID id;
     private String name;
