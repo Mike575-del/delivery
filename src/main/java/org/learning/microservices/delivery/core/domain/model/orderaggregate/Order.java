@@ -42,6 +42,10 @@ public class Order {
         return false;
     }
 
+    public UUID getId() {
+        return id;
+    }
+
     public UUID getCourierId(){
         return courierId;
     }

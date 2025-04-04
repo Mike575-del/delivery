@@ -1,6 +1,7 @@
 package org.learning.microservices.delivery.core.domain.model.courieraggregate;
 
 import static org.learning.microservices.delivery.core.domain.model.courieraggregate.CourierStatus.*;
+
 import org.learning.microservices.delivery.core.domain.model.SharedKernel.Location;
 
 import java.util.UUID;
