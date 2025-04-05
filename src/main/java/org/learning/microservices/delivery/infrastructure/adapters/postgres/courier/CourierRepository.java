@@ -49,4 +49,12 @@ public class CourierRepository implements ICourierRepository {
                 .filter(courier -> courier.getStatus().equals(CourierStatus.Free))
                 .toList();
     }
+
+    @Override
+    public List<Courier> getAllBusyCouriers(){
+        return courierJpaRepository.findAll().stream()
+                .map(mapper::toModel)
+                .filter(courier -> courier.getStatus().equals(CourierStatus.Busy))
+                .toList();
+    }
 }
