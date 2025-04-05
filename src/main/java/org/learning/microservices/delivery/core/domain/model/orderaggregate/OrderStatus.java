@@ -29,4 +29,8 @@ public class OrderStatus {
         }
         return false;
     }
+
+    public String getName() {
+        return name;
+    }
 }

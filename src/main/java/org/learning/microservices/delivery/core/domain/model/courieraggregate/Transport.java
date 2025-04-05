@@ -9,6 +9,11 @@ public class Transport {
     public static final int MIN_SPEED = 1;
     public static final int MAX_SPEED = 3;
 
+    public static final Transport PEDESTRIAN = new Transport ("Pedestrian", 1);
+    public static final Transport BICYCLE = new Transport("Bicycle", 2);
+    public static final Transport CAR = new Transport("Car", 3);
+
+
     private final UUID id;
     private String name;
     private int speed;
