@@ -17,7 +17,7 @@ public class AssignCourierHandler {
     private final IDispatchService dispatchService;
     private final TransactionTemplate transactionTemplate;
 
-    public void handle(AssignCourierCommand command){
+    public void handle(){
         Order order = orderRepository.getAnyCreatedOrder();
         Courier courier = dispatchService.dispatch(order, courierRepository.getAllFreeCouriers());
         transactionTemplate.execute(new TransactionCallbackWithoutResult() {

@@ -1,4 +1,4 @@
-package org.learning.microservices.delivery.infrastructure.adapters.postgres.order.repository.entity;
+package org.learning.microservices.delivery.infrastructure.adapters.postgres.order.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
