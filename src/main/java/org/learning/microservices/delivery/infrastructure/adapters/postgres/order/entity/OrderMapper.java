@@ -1,4 +1,4 @@
-package org.learning.microservices.delivery.infrastructure.adapters.postgres.order.repository.entity;
+package org.learning.microservices.delivery.infrastructure.adapters.postgres.order.entity;
 
 import org.learning.microservices.delivery.core.domain.model.orderaggregate.Order;
 import org.mapstruct.Mapper;

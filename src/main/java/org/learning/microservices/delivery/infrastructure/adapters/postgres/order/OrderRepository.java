@@ -1,11 +1,11 @@
-package org.learning.microservices.delivery.infrastructure.adapters.postgres.order.repository;
+package org.learning.microservices.delivery.infrastructure.adapters.postgres.order;
 
 import org.learning.microservices.delivery.core.domain.model.orderaggregate.Order;
 import org.learning.microservices.delivery.core.domain.model.orderaggregate.OrderStatus;
 import org.learning.microservices.delivery.core.ports.IOrderRepository;
-import org.learning.microservices.delivery.infrastructure.adapters.postgres.order.repository.entity.OrderEntity;
-import org.learning.microservices.delivery.infrastructure.adapters.postgres.order.repository.entity.OrderMapper;
-import org.learning.microservices.delivery.infrastructure.adapters.postgres.order.repository.repository.OrderJpaRepository;
+import org.learning.microservices.delivery.infrastructure.adapters.postgres.order.entity.OrderEntity;
+import org.learning.microservices.delivery.infrastructure.adapters.postgres.order.entity.OrderMapper;
+import org.learning.microservices.delivery.infrastructure.adapters.postgres.order.repository.OrderJpaRepository;
 
 import java.util.List;
 import java.util.UUID;

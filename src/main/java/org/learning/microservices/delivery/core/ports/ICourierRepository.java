@@ -15,4 +15,6 @@ public interface ICourierRepository {
 
     List<Courier> getAllFreeCouriers();
 
+    List<Courier> getAllBusyCouriers();
+
 }
